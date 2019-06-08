@@ -38,7 +38,7 @@ while opcion != 4:
         else:
             automatico = True
 
-    if opcion == 2:
+    elif opcion == 2:
 
         # TIMER CON  ---> CARGA MANUAL <---
 
@@ -161,10 +161,11 @@ while opcion != 4:
 
 
         else:
+            pass
 
             # TIMER CON ---> CARGA AUTOMATICA <---
 
-    if opcion == 3:
+    elif opcion == 3:
         print("\n Cantidad de MOTOS: "
               "\n Cantidad de AUTOS: "
               "\n Cantidad de CAMIONES: "
