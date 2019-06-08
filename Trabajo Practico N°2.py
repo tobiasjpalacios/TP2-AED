@@ -235,7 +235,7 @@ while opcion != 4:
 
                 # Generacion de Datos : TIPO DE VEHICULO y FORMA DE PAGO
                 tipo = random.randint(1,3)
-                forma_pago = 1
+                forma_pago = random.randint(1,2)
 
                 # Efectivo...
                 if forma_pago == 1 and tipo == 1:
