@@ -157,24 +157,130 @@ while opcion != 4:
                 time.sleep(retraso)
                 ahora = time.time()
 
-            print(total_recaudado, recaudado_hora4, recaudado_hora3, recaudado_hora2, recaudado_hora1, c_hora1 + c_hora2 + c_hora3 + c_hora4)
 
-
+        # TIMER CON CARGA ---> AUTMATICA <---
         else:
-            pass
+            import time
+            import random
+
+            inicio = time.time()
+            ahora = inicio
+            fin = inicio + 240
+
+            total_recaudado = 0
+            tipo1 = 0
+            recaudado_tipo1 = 0
+            tipo2 = 0
+            recaudado_tipo2 = 0
+            tipo3 = 0
+            recaudado_tipo3 = 0
+            c_efectivo = 0
+            recaudado_efectivo = 0
+            c_telepeaje = 0
+            recaudado_telepeaje = 0
+
+            moto = 20
+            auto = 40
+            camion = 80
+            bandera = None
+
+            c_hora1 = 0
+            recaudado_hora1 = 0
+            c_hora2 = 0
+            recaudado_hora2 = 0
+            c_hora3 = 0
+            recaudado_hora3 = 0
+            c_hora4 = 0
+            recaudado_hora4 = 0
+
+            while (ahora < fin):
+
+                retraso = random.randint(9, 15)  # La idea es que un vehiculo arribe al peaje entre 9 a 15 minutos
+                actual = int(ahora - inicio)
+                if actual > 180:
+                    hora = 4
+                    print("Hora 4 Minuto", actual)
+                elif actual > 120:
+                    hora = 3
+                    print("Hora 3 Minuto", actual)
+                elif actual > 60:
+                    hora = 2
+                    print("Hora 2 Minuto", actual)
+                else:
+                    hora = 1
+                    print("Hora 1 Minuto", actual)
+
+                # Generacion de Datos : TIPO DE VEHICULO y FORMA DE PAGO
+                tipo = random.randint(1,3)
+                forma_pago = 1
+
+                # Efectivo...
+                if forma_pago == 1 and tipo == 1:
+                    print("Tipo: MOTO - Forma de Pago: Efectivo ")
+                    bandera = moto
+                    c_efectivo += 1
+                    total_recaudado += moto
+                    tipo1 += 1
+                    recaudado_tipo1 += moto
+                    recaudado_efectivo += moto
+
+                elif forma_pago == 1 and tipo == 2:
+                    print("Tipo: AUTO - Forma de Pago: Efectivo ")
+                    bandera = auto
+                    c_efectivo += 1
+                    total_recaudado += auto
+                    tipo2 += 1
+                    recaudado_tipo2 += auto
+                    recaudado_efectivo += auto
+
+                elif forma_pago == 1 and tipo == 3:
+                    print("Tipo: CAMION - Forma de Pago: Efectivo ")
+                    bandera = camion
+                    c_efectivo += 1
+                    total_recaudado += camion
+                    tipo3 += 1
+                    recaudado_tipo3 += camion
+                    recaudado_efectivo += camion
+                # Telepeaje...
+
+                if forma_pago == 2 and tipo == 1:
+                    pass
+                elif forma_pago == 2 and tipo == 2:
+                    pass
+                elif forma_pago == 2 and tipo == 3:
+                    pass
+
+                # CHEQUEO DE HORA DE TURNO
+
+                if actual > 180:
+                    c_hora4 += 1
+                    recaudado_hora4 += bandera
+                elif actual > 120:
+                    c_hora3 += 1
+                    recaudado_hora3 += bandera
+                elif actual > 60:
+                    c_hora2 += 1
+                    recaudado_hora2 += bandera
+                else:
+                    c_hora1 += 1
+                    recaudado_hora1 += bandera
+
+                time.sleep(retraso)
+                ahora = time.time()
+            print(total_recaudado, recaudado_hora4, recaudado_hora3, recaudado_hora2, recaudado_hora1,c_hora1 + c_hora2 + c_hora3 + c_hora4)
 
             # TIMER CON ---> CARGA AUTOMATICA <---
 
     elif opcion == 3:
-        print("\n Cantidad de MOTOS: "
-              "\n Cantidad de AUTOS: "
-              "\n Cantidad de CAMIONES: "
-              "\n Recaudado en EFECTIVO: "
+        print("\n Cantidad de MOTOS: ", tipo1,
+              "\n Cantidad de AUTOS: ", tipo2,
+              "\n Cantidad de CAMIONES: ", tipo3,
+              "\n Recaudado en EFECTIVO: ", recaudado_efectivo,
               "\n Recaudado en TELEPEAJE: "
-              "\n Recaudadcion TOTAL: "
-              "\n Cantidad TOTAL de PASES: "
-              "\n Pago mas usado: "
-              "\n Cantidad de pases PROMEDIO: "
+              "\n Recaudadcion TOTAL: ", total_recaudado,
+              "\n Cantidad TOTAL de PASES: ", c_hora1 + c_hora2 + c_hora3 + c_hora4,
+              "\n Pago mas usado: ",
+              "\n Cantidad de pases PROMEDIO: ", (c_hora1+c_hora2+c_hora3+c_hora4)/4,
               "\n Patente mas nueva: "
               "\n HORA PICO: ")
 
