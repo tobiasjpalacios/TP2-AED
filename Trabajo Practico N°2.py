@@ -268,6 +268,7 @@ while opcion != 4:
 
                 if forma_pago == 2 and tipo == 1:
                     #VALIDACION
+                    print("Tipo: MOTO - Forma de Pago: Telepeaje ")
                     bandera = moto
                     c_telepeaje += 1
                     total_recaudado += moto
@@ -276,6 +277,7 @@ while opcion != 4:
                     recaudado_telepeaje += moto
                 elif forma_pago == 2 and tipo == 2:
                     #VALIDACION
+                    print("Tipo: AUTO - Forma de Pago: Telepeaje ")
                     bandera = auto
                     c_telepeaje += 1
                     total_recaudado += auto
@@ -284,6 +286,7 @@ while opcion != 4:
                     recaudado_telepeaje += auto
                 elif forma_pago == 2 and tipo == 3:
                     #VALIDACION
+                    print("Tipo: CAMION - Forma de Pago: Telepeaje ")
                     bandera = camion
                     c_telepeaje += 1
                     total_recaudado += camion
