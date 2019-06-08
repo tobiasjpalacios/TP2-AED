@@ -4,11 +4,11 @@
 Si es telepeaje se debe solicitar además la patente del vehículo, teniendo en cuenta que sólo se aceptan patentes
 correctas: ya sea de la forma LLLNNN o LLNNNLL (siendo L una letra y N un número). """
 
-fpago = int(input('Ingrese su forma de pago: '))
-while fpago !=1 and fpago !=2:
+forma_pago = int(input('Ingrese su forma de pago: '))
+while forma_pago !=1 and fpago !=2:
     print('Ingrese una forma de pago valida')
-    fpago = int(input('Ingrese su forma de pago: '))
-if fpago == 1:
+    forma_pago = int(input('Ingrese su forma de pago: '))
+if forma_pago == 1:
     efectivo = True
     telepeaje = False
 else:
