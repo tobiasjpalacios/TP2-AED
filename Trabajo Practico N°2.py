@@ -44,8 +44,6 @@ while opcion != 4:
 
         if automatico == False:
 
-            print("Funciona")
-
             import time
             import random
 
@@ -61,7 +59,9 @@ while opcion != 4:
             tipo3 = 0
             recaudado_tipo3 = 0
             c_efectivo = 0
+            recaudado_efectivo = 0
             c_telepeaje = 0
+            recaudado_telepeaje = 0
 
             moto = 20
             auto = 40
@@ -79,7 +79,7 @@ while opcion != 4:
 
             while (ahora < fin):
 
-                retraso = random.randint(1, 15)  # La idea es que un vehiculo arribe al peaje entre 1 a 15 minutos
+                retraso = random.randint(9, 15)  # La idea es que un vehiculo arribe al peaje entre 9 a 15 minutos
                 actual = int(ahora - inicio)
                 if actual > 180:
                     hora = 4
@@ -113,6 +113,7 @@ while opcion != 4:
                     total_recaudado += moto
                     tipo1 += 1
                     recaudado_tipo1 += moto
+                    recaudado_efectivo += moto
 
                 elif forma_pago == 1 and tipo == 2:
                     bandera = auto
@@ -120,6 +121,7 @@ while opcion != 4:
                     total_recaudado += auto
                     tipo2 += 1
                     recaudado_tipo2 += auto
+                    recaudado_efectivo += auto
 
                 elif forma_pago == 1 and tipo == 3:
                     bandera = camion
@@ -127,7 +129,7 @@ while opcion != 4:
                     total_recaudado += camion
                     tipo3 += 1
                     recaudado_tipo3 += camion
-
+                    recaudado_efectivo += camion
                 # Telepeaje...
 
                 if forma_pago == 2 and tipo == 1:
@@ -159,7 +161,22 @@ while opcion != 4:
 
 
         else:
-            print("Tambien funciona")
+
+            # TIMER CON ---> CARGA AUTOMATICA <---
+
+    if opcion == 3:
+        print("\n Cantidad de MOTOS: "
+              "\n Cantidad de AUTOS: "
+              "\n Cantidad de CAMIONES: "
+              "\n Recaudado en EFECTIVO: "
+              "\n Recaudado en TELEPEAJE: "
+              "\n Recaudadcion TOTAL: "
+              "\n Cantidad TOTAL de PASES: "
+              "\n Pago mas usado: "
+              "\n Cantidad de pases PROMEDIO: "
+              "\n Patente mas nueva: "
+              "\n HORA PICO: ")
+
 
 
 
