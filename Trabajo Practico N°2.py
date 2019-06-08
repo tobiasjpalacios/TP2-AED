@@ -17,7 +17,9 @@ def menu_principal():
 
     return opcion
 
-#Timer...
+
+
+
 
 ######## PROGRAMA ########
 
@@ -79,7 +81,7 @@ while opcion != 4:
 
             while (ahora < fin):
 
-                retraso = random.randint(9, 15)  # La idea es que un vehiculo arribe al peaje entre 9 a 15 minutos
+                retraso = random.randint(1, 15)  # La idea es que un vehiculo arribe al peaje entre 9 a 15 minutos
                 actual = int(ahora - inicio)
                 if actual > 180:
                     hora = 4
@@ -133,35 +135,12 @@ while opcion != 4:
                 # Telepeaje...
 
                 if forma_pago == 2 and tipo == 1:
-                    
-                    #VALIDACION
-                    bandera = moto
-                    c_telepeaje += 1
-                    total_recaudado += moto
-                    tipo1 += 1
-                    recaudado_tipo1 += moto
-                    recaudado_telepeaje += moto
-                    
+                    pass
                 elif forma_pago == 2 and tipo == 2:
-          
-                    #VALIDACION
-                    bandera = auto
-                    c_telepeaje += 1
-                    total_recaudado += auto
-                    tipo2 += 1
-                    recaudado_tipo2 += auto
-                    recaudado_telepeaje += auto
-                    
+                    pass
                 elif forma_pago == 2 and tipo == 3:
-                    
-                    #VALIDACION
-                    bandera = camion
-                    c_telepeaje += 1
-                    total_recaudado += camion
-                    tipo3 += 1
-                    recaudado_tipo3 += camion
-                    recaudado_telepeaje += camion
-    
+                    pass
+
                 # CHEQUEO DE HORA DE TURNO
 
                 if actual > 180:
@@ -177,11 +156,21 @@ while opcion != 4:
                     c_hora1 += 1
                     recaudado_hora1 += bandera
 
+                if c_hora1 > c_hora2 and c_hora1 > c_hora3 and c_hora1 > c_hora4:
+                    hora_pico = "1° HORA"
+                elif c_hora2 > c_hora3 and c_hora2 > c_hora4:
+                    hora_pico = "2° HORA"
+                elif c_hora3 > c_hora4:
+                    hora_pico = "3° HORA"
+                else:
+                    hora_pico = "4° HORA"
+
+
                 time.sleep(retraso)
                 ahora = time.time()
 
 
-        # TIMER CON CARGA ---> AUTOMATICA <---
+        # TIMER CON CARGA ---> AUTMATICA <---
         else:
             import time
             import random
@@ -218,7 +207,7 @@ while opcion != 4:
 
             while (ahora < fin):
 
-                retraso = random.randint(9, 15)  # La idea es que un vehiculo arribe al peaje entre 9 a 15 minutos
+                retraso = random.randint(1, 15)  # La idea es que un vehiculo arribe al peaje entre 9 a 15 minutos
                 actual = int(ahora - inicio)
                 if actual > 180:
                     hora = 4
@@ -235,7 +224,7 @@ while opcion != 4:
 
                 # Generacion de Datos : TIPO DE VEHICULO y FORMA DE PAGO
                 tipo = random.randint(1,3)
-                forma_pago = random.randint(1,2)
+                forma_pago = 1
 
                 # Efectivo...
                 if forma_pago == 1 and tipo == 1:
@@ -267,32 +256,11 @@ while opcion != 4:
                 # Telepeaje...
 
                 if forma_pago == 2 and tipo == 1:
-                    #VALIDACION
-                    print("Tipo: MOTO - Forma de Pago: Telepeaje ")
-                    bandera = moto
-                    c_telepeaje += 1
-                    total_recaudado += moto
-                    tipo1 += 1
-                    recaudado_tipo1 += moto
-                    recaudado_telepeaje += moto
+                    pass
                 elif forma_pago == 2 and tipo == 2:
-                    #VALIDACION
-                    print("Tipo: AUTO - Forma de Pago: Telepeaje ")
-                    bandera = auto
-                    c_telepeaje += 1
-                    total_recaudado += auto
-                    tipo2 += 1
-                    recaudado_tipo2 += auto
-                    recaudado_telepeaje += auto
+                    pass
                 elif forma_pago == 2 and tipo == 3:
-                    #VALIDACION
-                    print("Tipo: CAMION - Forma de Pago: Telepeaje ")
-                    bandera = camion
-                    c_telepeaje += 1
-                    total_recaudado += camion
-                    tipo3 += 1
-                    recaudado_tipo3 += camion
-                    recaudado_telepeaje += camion
+                    pass
 
                 # CHEQUEO DE HORA DE TURNO
 
@@ -309,9 +277,18 @@ while opcion != 4:
                     c_hora1 += 1
                     recaudado_hora1 += bandera
 
+                if c_hora1 > c_hora2 and c_hora1 > c_hora3 and c_hora1 > c_hora4:
+                    hora_pico = "1° HORA"
+                elif c_hora2 > c_hora3 and c_hora2 > c_hora4:
+                    hora_pico = "2° HORA"
+                elif c_hora3 > c_hora4:
+                    hora_pico = "3° HORA"
+                else:
+                    hora_pico = "4° HORA"
+
                 time.sleep(retraso)
                 ahora = time.time()
-            print(total_recaudado, recaudado_hora4, recaudado_hora3, recaudado_hora2, recaudado_hora1,c_hora1 + c_hora2 + c_hora3 + c_hora4)
+
 
             # TIMER CON ---> CARGA AUTOMATICA <---
 
@@ -326,7 +303,11 @@ while opcion != 4:
               "\n Pago mas usado: ",
               "\n Cantidad de pases PROMEDIO: ", (c_hora1+c_hora2+c_hora3+c_hora4)/4,
               "\n Patente mas nueva: "
-              "\n HORA PICO: ")
+              "\n HORA PICO: ", hora_pico,
+              "\n 1° HORA: ", c_hora1,
+              "\n 2° HORA: ", c_hora2,
+              "\n 3° HORA: ", c_hora3,
+              "\n 4° HORA: ", c_hora4,)
 
 
 
