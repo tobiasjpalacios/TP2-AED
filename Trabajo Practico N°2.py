@@ -133,12 +133,35 @@ while opcion != 4:
                 # Telepeaje...
 
                 if forma_pago == 2 and tipo == 1:
-                    pass
+                    
+                    #VALIDACION
+                    bandera = moto
+                    c_telepeaje += 1
+                    total_recaudado += moto
+                    tipo1 += 1
+                    recaudado_tipo1 += moto
+                    recaudado_telepeaje += moto
+                    
                 elif forma_pago == 2 and tipo == 2:
-                    pass
+          
+                    #VALIDACION
+                    bandera = auto
+                    c_telepeaje += 1
+                    total_recaudado += auto
+                    tipo2 += 1
+                    recaudado_tipo2 += auto
+                    recaudado_telepeaje += auto
+                    
                 elif forma_pago == 2 and tipo == 3:
-                    pass
-
+                    
+                    #VALIDACION
+                    bandera = camion
+                    c_telepeaje += 1
+                    total_recaudado += camion
+                    tipo3 += 1
+                    recaudado_tipo3 += camion
+                    recaudado_telepeaje += camion
+    
                 # CHEQUEO DE HORA DE TURNO
 
                 if actual > 180:
@@ -158,7 +181,7 @@ while opcion != 4:
                 ahora = time.time()
 
 
-        # TIMER CON CARGA ---> AUTMATICA <---
+        # TIMER CON CARGA ---> AUTOMATICA <---
         else:
             import time
             import random
@@ -244,11 +267,29 @@ while opcion != 4:
                 # Telepeaje...
 
                 if forma_pago == 2 and tipo == 1:
-                    pass
+                    #VALIDACION
+                    bandera = moto
+                    c_telepeaje += 1
+                    total_recaudado += moto
+                    tipo1 += 1
+                    recaudado_tipo1 += moto
+                    recaudado_telepeaje += moto
                 elif forma_pago == 2 and tipo == 2:
-                    pass
+                    #VALIDACION
+                    bandera = auto
+                    c_telepeaje += 1
+                    total_recaudado += auto
+                    tipo2 += 1
+                    recaudado_tipo2 += auto
+                    recaudado_telepeaje += auto
                 elif forma_pago == 2 and tipo == 3:
-                    pass
+                    #VALIDACION
+                    bandera = camion
+                    c_telepeaje += 1
+                    total_recaudado += camion
+                    tipo3 += 1
+                    recaudado_tipo3 += camion
+                    recaudado_telepeaje += camion
 
                 # CHEQUEO DE HORA DE TURNO
 
