@@ -12,5 +12,5 @@ Trabajo practico de aed
 * Tipo de pago mas usado
 * Cantidad de pases promedio por hora 
 * La patente mas nueva 
-* **la hora pico del turno. ** 
+* **la hora pico del turno**
 
