@@ -1,34 +1,43 @@
 
 
 def validacion_patente(patente):
-    letras= False
-    numeros= False
-    index= 0
+    bandera = True
+    n = 0
     for i in patente:
-        if len(patente)==7: 
-            if  2<= index<=4   and "A"<= i <= "z" :
-                numeros = False
-            else:
-                if  0 <= index <=1 or 5 <= index <=6  and "A"<= i <= "Z"  :
-                    letras = True
-                elif  2 <= index <= 4  and 0 <= int(i) <= 9 :
-                    numeros= True
-                else:
-                    pass
+        n += 1
         if len(patente)==6:
-            if 0<= index <=2 and "A" <= i<= "Z":
-                letras = True
-            elif 3 <= index <=6 and "0" <= i <= "9":
-                numeros= True
-            else:
-                pass
+            if n >= 1 and n <= 3:
+                if "a" <= i <= "z":
+                    pass
+                else:
+                    bandera = False
+            elif n >= 4 and n <= 6:
+                if "0" <= i <= "9":
+                    pass
+                else:
+                    bandera = False
+        if len(patente)==7: 
+            if n >= 1 and n <= 2:
+                if "a" <= i <= "z":
+                    pass
+                else:
+                    bandera = False
+            elif n >= 3 and n <= 5:
+                if "0" <= i <= "9":
+                    pass
+                else:
+                    bandera = False
+            elif n >= 5 and n <= 6:
+                if "a" <= i <= "z":
+                    pass
+                else:
+                    bandera = False
 
-        index = index+1
-    if letras == True and numeros == True:
-        patente = True
-    else:
-        patente= False
-    return patente
+    if n != 6 and n!= 7:
+        bandera = False
+
+
+    return bandera
             
 patente =  tuple(input('Ingrese la patente de su vehiculo '))
 
